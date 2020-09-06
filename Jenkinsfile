@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Build on dev') {
+        stage('Build and test on dev') {
             
               
             steps {
-                sh label: '', script: '''git branch status
+                sh label: '', script: '''git checkout origin/dev
 '''
                 sh label: '', script: '''OLD="$(sudo docker ps --all --quiet --filter=name="$CONTAINER_NAME")"
 if [ -n "$OLD" ]; then
@@ -41,12 +41,15 @@ sudo docker images '''
                  }
              }
          }
-         stage("Run Unit tests on stage branch ") {
+         stage("Run Functional tests on stage branch ") {
           
             steps {
-                sh label: '', script: '''git checkout stage
-git merge dev'''
-                sh label: '', script: '''git branch status
+                sh label: '', script: '''git checkout origin/stage
+'''   
+                sh label: '', script: '''git config --global user.email "usamazahid0123@gmail.com"
+git config --global user.name "Usama42"'''
+                sh label: '', script: 'git merge origin/dev'
+                sh label: '', script: '''git branch 
 '''
                 sh label: '', script: 'sudo docker-compose ps'
             }
@@ -54,12 +57,24 @@ git merge dev'''
          stage("Stopping app") {
            
             steps {
-                sh label: '', script: '''git branch status
+                sh label: '', script: '''git branch 
 '''
                 sh label: '', script: '''sudo docker-compose down
 '''
             }
          }   
+         stage("Deploy to prod") {
+           
+            steps {
+                sh label: '', script: '''git checkout origin/prod                
+'''
+                sh label: '', script: '''git config --global user.email "usamazahid0123@gmail.com"
+git config --global user.name "Usama42"'''
+                sh label: '', script: 'git merge origin/stage'
+                sh label: '', script: '''sudo docker-compose ps
+'''
+            }
+         }  
                      
                      
     }
