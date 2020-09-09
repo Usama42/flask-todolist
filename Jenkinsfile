@@ -44,7 +44,7 @@ sudo docker-compose ps '''
        //              echo "App started successfully:)"
            //      }
              //    failure {
-                          echo "App failed :("
+                     //     echo "App failed :("
                //  }
              //}
         // }
