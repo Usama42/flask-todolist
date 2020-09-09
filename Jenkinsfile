@@ -59,7 +59,7 @@ sudo docker images '''
               //  sh label: '', script: 'chmod a+x test.sh'
              //   sh label: '', script: 'cd ..'
            //     sh label: '', script: './tests/test.sh'
-                sh label: '', script: '''sudo pytest tests/test_basics.py 
+             //   sh label: '', script: '''sudo pytest tests/test_basics.py 
 '''
             }
          }  
