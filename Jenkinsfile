@@ -35,7 +35,7 @@ sudo docker-compose ps '''
       //   stage("Starting app") {
              
         //     steps {
-                 sh label: '', script: ''' sudo docker-compose build
+        //         sh label: '', script: ''' sudo docker-compose build
 // sudo docker-compose up -d
  //sudo docker-compose ps '''
      //        }    
