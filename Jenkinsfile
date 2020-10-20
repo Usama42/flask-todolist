@@ -58,7 +58,7 @@ sudo docker-compose ps '''
 
                 sh label: '', script: 'sudo docker-compose ps'
                 
-                sh label: '', script: './tests/test.sh'
+                sh label: '', script: 'sudo bash tests/test.sh'
             }
          }  
   
