@@ -73,10 +73,7 @@ sudo docker-compose ps '''
 '''
                 sh label: '', script: 'sudo docker tag todolist:app usama911/todolist:app'
                 sh label: '', script: 'sudo docker push usama911/todolist:app'
-                sh label: '', script: 'ssh -i /home/usama/Downloads/flask-ec2-key.pem ec2-user@ec2-3-89-70-28.compute-1.amazonaws.com'
-                sh label: '',script: '''cd /home/ec2-user/fyp && git clone https://github.com/Usama42/flask-todolist.git && cd flask-todolist && docker-compose up -d'''
-                //        sh label: '', script: '''ssh ec2-user@ec2-3-89-70-28.compute-1.amazonaws.com "cd /home/ec2-user/fyp && git clone https://github.com/Usama42/flask-todolist.git && cd flask-todolist && docker-compose up -d"
-
+       
 //'''
             }
          }  
