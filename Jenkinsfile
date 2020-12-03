@@ -73,6 +73,7 @@ sudo docker-compose ps '''
 '''
                 sh label: '', script: 'sudo docker tag todolist:app usama911/todolist:app'
                 sh label: '', script: 'sudo docker push usama911/todolist:app'
+                sh label: '', script: 'sudo docker-compose up -d'
        
 //'''
             }
